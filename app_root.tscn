@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcxlyk2bbv3ub"]
 
-[ext_resource type="PackedScene" uid="uid://bx0rdys8yglae" path="res://scenes/star_background.tscn" id="1_lva53"]
+[ext_resource type="PackedScene" uid="uid://bx0rdys8yglae" path="res://scenes/STAR_BACKGROUND/star_background.tscn" id="1_lva53"]
 
 [node name="APP_ROOT" type="Node2D"]
 
