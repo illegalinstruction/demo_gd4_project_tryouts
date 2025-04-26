@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx0rdys8yglae"]
+
+[ext_resource type="Texture2D" uid="uid://cx21upe8s7lek" path="res://art_scratch/background_scroll_01.png" id="1_jpdtn"]
+[ext_resource type="Texture2D" uid="uid://50blej7i4twe" path="res://art_scratch/background_scroll_02.png" id="2_312on"]
+[ext_resource type="Texture2D" uid="uid://d1a52v85lst6n" path="res://art_scratch/background_scroll_03.png" id="3_05nm6"]
+[ext_resource type="Texture2D" uid="uid://bnos3lh1lpchw" path="res://art_scratch/background_scroll_04.png" id="4_cplfp"]
+
+[node name="STAR_BACKGROUND" type="Node2D"]
+
+[node name="BackgroundScroll01_00" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_jpdtn")
+centered = false
+
+[node name="BackgroundScroll01_01" type="Sprite2D" parent="BackgroundScroll01_00"]
+position = Vector2(0, -512)
+texture = ExtResource("1_jpdtn")
+centered = false
+
+[node name="BackgroundScroll02_00" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("2_312on")
+centered = false
+
+[node name="BackgroundScroll02_01" type="Sprite2D" parent="BackgroundScroll02_00"]
+position = Vector2(0, -512.5)
+texture = ExtResource("2_312on")
+centered = false
+
+[node name="BackgroundScroll03_00" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_05nm6")
+centered = false
+
+[node name="BackgroundScroll03_01" type="Sprite2D" parent="BackgroundScroll03_00"]
+position = Vector2(0, -512.5)
+texture = ExtResource("3_05nm6")
+centered = false
+
+[node name="BackgroundScroll04_00" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4_cplfp")
+centered = false
+
+[node name="BackgroundScroll04_01" type="Sprite2D" parent="BackgroundScroll04_00"]
+position = Vector2(0, -512.5)
+texture = ExtResource("4_cplfp")
+centered = false
