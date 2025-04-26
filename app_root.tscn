@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bcxlyk2bbv3ub"]
+
+[node name="APP_ROOT" type="Node2D"]
+
+[node name="MAIN_MENU" type="Node2D" parent="."]
+
+[node name="GAMEPLAY" type="Node2D" parent="."]
+
+[node name="OPTIONS" type="Node2D" parent="."]
