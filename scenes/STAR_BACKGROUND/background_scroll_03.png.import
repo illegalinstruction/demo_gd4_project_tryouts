@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://50blej7i4twe"
-path="res://.godot/imported/background_scroll_02.png-e41941718824be1c1b09386ecc97d45f.ctex"
+uid="uid://d1a52v85lst6n"
+path="res://.godot/imported/background_scroll_03.png-afa7de3bec5cb9d7a3949b60da4c1c5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_scratch/background_scroll_02.png"
-dest_files=["res://.godot/imported/background_scroll_02.png-e41941718824be1c1b09386ecc97d45f.ctex"]
+source_file="res://scenes/STAR_BACKGROUND/background_scroll_03.png"
+dest_files=["res://.godot/imported/background_scroll_03.png-afa7de3bec5cb9d7a3949b60da4c1c5f.ctex"]
 
 [params]
 

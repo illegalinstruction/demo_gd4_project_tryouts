@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqauq1agf0xpy"]
 
 [ext_resource type="Material" uid="uid://ukyu62og2yoq" path="res://scenes/STAR_BACKGROUND/MATL_additive.tres" id="1_dmuwp"]
-[ext_resource type="Texture2D" uid="uid://dgayvdqcsf6hs" path="res://art_scratch/star.png" id="2_ujhwy"]
+[ext_resource type="Texture2D" uid="uid://dgayvdqcsf6hs" path="res://scenes/STAR_BACKGROUND/star.png" id="2_ujhwy"]
 [ext_resource type="Script" uid="uid://p52xoc8v13we" path="res://scenes/STAR_BACKGROUND/moveable_star.gd" id="3_885mj"]
 
 [node name="MOVEABLE_STAR" type="Sprite2D"]

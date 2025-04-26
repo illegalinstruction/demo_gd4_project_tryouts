@@ -1,58 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx0rdys8yglae"]
+[gd_scene load_steps=5 format=3 uid="uid://bx0rdys8yglae"]
 
-[ext_resource type="Texture2D" uid="uid://cx21upe8s7lek" path="res://art_scratch/background_scroll_01.png" id="1_jpdtn"]
+[ext_resource type="Texture2D" uid="uid://cx21upe8s7lek" path="res://scenes/STAR_BACKGROUND/background_scroll_01.png" id="1_jpdtn"]
 [ext_resource type="Script" uid="uid://clel8cd8h3lg6" path="res://scenes/STAR_BACKGROUND/star_background.gd" id="1_sxiew"]
-[ext_resource type="Texture2D" uid="uid://50blej7i4twe" path="res://art_scratch/background_scroll_02.png" id="2_312on"]
-[ext_resource type="Texture2D" uid="uid://d1a52v85lst6n" path="res://art_scratch/background_scroll_03.png" id="3_05nm6"]
-[ext_resource type="Texture2D" uid="uid://bnos3lh1lpchw" path="res://art_scratch/background_scroll_04.png" id="4_cplfp"]
 [ext_resource type="Material" uid="uid://ukyu62og2yoq" path="res://scenes/STAR_BACKGROUND/MATL_additive.tres" id="6_4cqg7"]
-[ext_resource type="Texture2D" uid="uid://b4k1734vcqrsg" path="res://art_scratch/background_nebula.png" id="7_ltwyk"]
+[ext_resource type="Texture2D" uid="uid://b4k1734vcqrsg" path="res://scenes/STAR_BACKGROUND/background_nebula.png" id="7_ltwyk"]
 
 [node name="STAR_BACKGROUND" type="Node2D"]
 script = ExtResource("1_sxiew")
 
-[node name="BackgroundScroll01_00" type="Sprite2D" parent="."]
-modulate = Color(0.67069, 0.67069, 0.67069, 1)
+[node name="galaxy_bg_prev" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_jpdtn")
 centered = false
 
-[node name="BackgroundScroll01_01" type="Sprite2D" parent="BackgroundScroll01_00"]
-position = Vector2(0, -512)
+[node name="galaxy_bg_next" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_jpdtn")
-centered = false
-
-[node name="BackgroundScroll02_00" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(2, 2)
-texture = ExtResource("2_312on")
-centered = false
-
-[node name="BackgroundScroll02_01" type="Sprite2D" parent="BackgroundScroll02_00"]
-position = Vector2(0, -512.5)
-texture = ExtResource("2_312on")
-centered = false
-
-[node name="BackgroundScroll03_00" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(2, 2)
-texture = ExtResource("3_05nm6")
-centered = false
-
-[node name="BackgroundScroll03_01" type="Sprite2D" parent="BackgroundScroll03_00"]
-position = Vector2(0, -512.5)
-texture = ExtResource("3_05nm6")
-centered = false
-
-[node name="BackgroundScroll04_00" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(2, 2)
-texture = ExtResource("4_cplfp")
-centered = false
-
-[node name="BackgroundScroll04_01" type="Sprite2D" parent="BackgroundScroll04_00"]
-position = Vector2(0, -512.5)
-texture = ExtResource("4_cplfp")
 centered = false
 
 [node name="BackgroundNebula" type="Sprite2D" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4k1734vcqrsg"
-path="res://.godot/imported/background_nebula.png-13d392ef6dd0adecef7996a1cb08e6e4.ctex"
+uid="uid://bnos3lh1lpchw"
+path="res://.godot/imported/background_scroll_04.png-4c538cea75a1650c7dd625fa8442360b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_scratch/background_nebula.png"
-dest_files=["res://.godot/imported/background_nebula.png-13d392ef6dd0adecef7996a1cb08e6e4.ctex"]
+source_file="res://scenes/STAR_BACKGROUND/background_scroll_04.png"
+dest_files=["res://.godot/imported/background_scroll_04.png-4c538cea75a1650c7dd625fa8442360b.ctex"]
 
 [params]
 

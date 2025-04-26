@@ -18,27 +18,61 @@ extends Node2D;
 const NUM_MOVEABLE_STARS : int = 64;
 
 #-------------------------------------------------------------------------------                 
-const NEBULA_SPEED : float = 0.33333333333;
-const GALAXY_SPEED : float = 0.125;
+const NEBULA_SPEED : float = 0.4;
+const GALAXY_SPEED : float = 1.2;
 
 # these should be treated as constants - we load them below
 var   NEBULA_TEXTURE_HEIGHT : int;
+var   GALAXY_TEXTURE_HEIGHT : int;
 var   DISPLAY_HEIGHT        : int;
+
+# which galaxy should we be painting right now?
+var   which_galaxy          : int;
+var   which_galaxy_prev     : int;
+const MIN_GALAXY            : int = 1;
+const MAX_GALAXY            : int = 4;
+
+var   galaxy_textures       : Array = [];
 
 #-------------------------------------------------------------------------------                 
 func _ready() -> void:
+	# stars
 	for star_index in range(0, NUM_MOVEABLE_STARS):
 		var star_tmp = MOVEABLE_STAR.instantiate();
 		add_child(star_tmp);
 		# no need to manage the stars after they're inited, they'll take care of
 		# their own anims and die when we do
 	
+	# galaxies
+	galaxy_textures.resize(MAX_GALAXY);
+	
+	for galaxy_index in range(0, MAX_GALAXY):
+		var image_filename : String = "res://scenes/STAR_BACKGROUND/background_scroll_0" + \
+			str(galaxy_index + 1) + ".png";
+		print(image_filename)
+		galaxy_textures[galaxy_index] = load(image_filename) as Texture;
+	
 	# cache the sprite & viewport sizes to reduce the # of function calls we
 	# have to make later
 	NEBULA_TEXTURE_HEIGHT = $BackgroundNebula.texture.get_size().y * \
 		$BackgroundNebula.scale.y;
+	
+	# in the real world, we'd store all of the sizes individually.
+	# I made them all the same height for simplicity because it's a demo.	
+	GALAXY_TEXTURE_HEIGHT = galaxy_textures[0].get_size().y * \
+		$galaxy_bg_next.scale.y;
 	DISPLAY_HEIGHT        = int(get_viewport().size.y);
 
+	# start with galaxy background one
+	which_galaxy      = MIN_GALAXY;
+	which_galaxy_prev = MIN_GALAXY;
+	return;
+
+#-------------------------------------------------------------------------------                 
+func set_galaxy(arg_galaxy_type : int) -> void:
+	which_galaxy_prev = which_galaxy;
+	which_galaxy = clampi(arg_galaxy_type, MIN_GALAXY, MAX_GALAXY);
+	print(which_galaxy_prev)
 	return;
 
 #-------------------------------------------------------------------------------                 
@@ -49,6 +83,18 @@ func _process(_ignored: float) -> void:
 		$BackgroundNebula.position.y = 0;
 
 	# galaxy plane
-	$BackgroundScroll01_00.position.y += GALAXY_SPEED;
-	if ($BackgroundScroll01_00.position.y >= DISPLAY_HEIGHT):
-		$BackgroundScroll01_00.position.y = 0;
+	$galaxy_bg_next.position.y += GALAXY_SPEED;
+	# off the bottom?
+	if ($galaxy_bg_next.position.y >= GALAXY_TEXTURE_HEIGHT):
+		$galaxy_bg_next.position.y = 0;
+		
+		# did we have a galaxy change pending?
+		if (which_galaxy_prev != which_galaxy):
+			$galaxy_bg_prev.texture = galaxy_textures[which_galaxy-1];
+			which_galaxy_prev = which_galaxy;
+		else:
+			# trailing galaxy already correct, update leading galaxy
+			$galaxy_bg_next.texture = $galaxy_bg_prev.texture;
+
+	# move trailing galaxy, too
+	$galaxy_bg_prev.position.y = $galaxy_bg_next.position.y - GALAXY_TEXTURE_HEIGHT; 			
