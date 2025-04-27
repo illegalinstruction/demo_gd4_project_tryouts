@@ -70,11 +70,12 @@ func _process(delta: float) -> void:
 	# timer management
 	time_remaining -= 1;
 	
+	# update timer text
 	$LBL_time.text = "Time remaining: " + str("%0.2f" % float(time_remaining / Engine.get_frames_per_second())) +\
 		" seconds";
+
 	if (time_remaining < 1):
 		# out of time, the player's dead
 		# go back to main menu
 		get_parent().notify_game_done(score);
 	
-	# update timer text
