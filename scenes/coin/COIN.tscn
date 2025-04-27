@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bsefrg2i5emfs"]
+[gd_scene load_steps=25 format=3 uid="uid://bsefrg2i5emfs"]
 
 [ext_resource type="Script" uid="uid://c5jpu3caf8bhb" path="res://scenes/coin/coin.gd" id="1_vtlh3"]
 [ext_resource type="Texture2D" uid="uid://d3xxvtv1nr271" path="res://scenes/coin/coin_sprite_00001.png" id="2_mnflt"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bm46cf6poyhpv" path="res://scenes/coin/coin_sprite_00018.png" id="19_mnycj"]
 [ext_resource type="Texture2D" uid="uid://bu0igvdpxssm0" path="res://scenes/coin/coin_sprite_00019.png" id="20_pntxn"]
 [ext_resource type="Texture2D" uid="uid://sblujf0axj3i" path="res://scenes/coin/coin_sprite_00020.png" id="21_aaoau"]
+[ext_resource type="AudioStream" uid="uid://d1t16v848vujv" path="res://scenes/coin/accept.wav" id="22_mnflt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkrgg"]
 animations = [{
@@ -105,3 +106,6 @@ frame_progress = 0.90819
 shape = SubResource("CircleShape2D_s7ns5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_mnflt")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

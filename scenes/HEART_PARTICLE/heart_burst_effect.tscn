@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rhf4jh1bvjev"]
+[gd_scene load_steps=7 format=3 uid="uid://rhf4jh1bvjev"]
 
 [ext_resource type="Texture2D" uid="uid://m40e64prbv7w" path="res://scenes/HEART_PARTICLE/heart.png" id="1_h6ph4"]
 [ext_resource type="Material" uid="uid://ukyu62og2yoq" path="res://scenes/STAR_BACKGROUND/MATL_additive.tres" id="1_sinkm"]
+[ext_resource type="Script" uid="uid://b2i4b7f5cbiar" path="res://scenes/HEART_PARTICLE/heart_burst_effect.gd" id="2_gf6rm"]
 
 [sub_resource type="Curve" id="Curve_gf6rm"]
 _data = [Vector2(0, 1), 0.0, -0.115551, 0, 0, Vector2(1, 0.258065), -1.78268, 0.0, 0, 0]
@@ -40,3 +41,4 @@ color_ramp = SubResource("Gradient_gf6rm")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 hue_variation_curve = SubResource("Curve_sinkm")
+script = ExtResource("2_gf6rm")

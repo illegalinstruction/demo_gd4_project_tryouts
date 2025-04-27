@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://88tul31t7ugo"]
+
+[ext_resource type="Script" uid="uid://c0c182juw0nmd" path="res://scenes/MAINMENU/main_menu.gd" id="1_epxnq"]
+[ext_resource type="PackedScene" uid="uid://bx0rdys8yglae" path="res://scenes/STAR_BACKGROUND/star_background.tscn" id="2_ukl7a"]
+[ext_resource type="Texture2D" uid="uid://bv1cb0vxfhbw4" path="res://scenes/MAINMENU/header.png" id="3_nnxtt"]
+[ext_resource type="Texture2D" uid="uid://r243hlcp5rqg" path="res://scenes/MAINMENU/play.png" id="4_7kend"]
+[ext_resource type="Texture2D" uid="uid://cvhb21fajotjh" path="res://scenes/MAINMENU/quit.png" id="5_17iqh"]
+
+[node name="MAIN_MENU" type="Node2D"]
+script = ExtResource("1_epxnq")
+
+[node name="STAR_BACKGROUND" parent="." instance=ExtResource("2_ukl7a")]
+
+[node name="Header" type="Sprite2D" parent="."]
+position = Vector2(512, 128)
+texture = ExtResource("3_nnxtt")
+
+[node name="Play" type="Sprite2D" parent="."]
+position = Vector2(192, 384)
+texture = ExtResource("4_7kend")
+
+[node name="BTN_play" type="Button" parent="Play"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -112.0
+offset_top = -48.0
+offset_right = 120.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Sprite2D" parent="."]
+position = Vector2(832, 384)
+texture = ExtResource("5_17iqh")
+
+[node name="BTN_quit" type="Button" parent="Quit"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -112.0
+offset_top = -48.0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Play/BTN_play" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="Quit/BTN_quit" to="." method="_on_btn_quit_pressed"]

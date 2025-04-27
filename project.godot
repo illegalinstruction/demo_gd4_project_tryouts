@@ -13,12 +13,14 @@ config_version=5
 config/name="godot4_learning_puzzle_game"
 run/main_scene="uid://bcxlyk2bbv3ub"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
+window/vsync/vsync_mode=0
 
 [rendering]
 

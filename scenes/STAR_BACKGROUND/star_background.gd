@@ -33,6 +33,7 @@ const MIN_GALAXY            : int = 1;
 const MAX_GALAXY            : int = 4;
 
 var   galaxy_textures       : Array = [];
+var   galaxy_change_pending : bool  = false;
 
 #-------------------------------------------------------------------------------                 
 func _ready() -> void:
@@ -49,7 +50,6 @@ func _ready() -> void:
 	for galaxy_index in range(0, MAX_GALAXY):
 		var image_filename : String = "res://scenes/STAR_BACKGROUND/background_scroll_0" + \
 			str(galaxy_index + 1) + ".png";
-		print(image_filename)
 		galaxy_textures[galaxy_index] = load(image_filename) as Texture;
 	
 	# cache the sprite & viewport sizes to reduce the # of function calls we
@@ -64,15 +64,18 @@ func _ready() -> void:
 	DISPLAY_HEIGHT        = int(get_viewport().size.y);
 
 	# start with galaxy background one
-	which_galaxy      = MIN_GALAXY;
-	which_galaxy_prev = MIN_GALAXY;
+	which_galaxy          = MIN_GALAXY;
+	which_galaxy_prev     = MIN_GALAXY;
+	galaxy_change_pending = false;
 	return;
 
 #-------------------------------------------------------------------------------                 
 func set_galaxy(arg_galaxy_type : int) -> void:
-	which_galaxy_prev = which_galaxy;
-	which_galaxy = clampi(arg_galaxy_type, MIN_GALAXY, MAX_GALAXY);
-	print(which_galaxy_prev)
+	if not (galaxy_change_pending):
+		which_galaxy_prev = which_galaxy;
+	
+	which_galaxy          = clampi(arg_galaxy_type, MIN_GALAXY, MAX_GALAXY);
+	galaxy_change_pending = true;
 	return;
 
 #-------------------------------------------------------------------------------                 
@@ -92,6 +95,7 @@ func _process(_ignored: float) -> void:
 		if (which_galaxy_prev != which_galaxy):
 			$galaxy_bg_prev.texture = galaxy_textures[which_galaxy-1];
 			which_galaxy_prev = which_galaxy;
+			galaxy_change_pending = false;
 		else:
 			# trailing galaxy already correct, update leading galaxy
 			$galaxy_bg_next.texture = $galaxy_bg_prev.texture;

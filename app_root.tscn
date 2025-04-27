@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcxlyk2bbv3ub"]
+[gd_scene load_steps=2 format=3 uid="uid://bcxlyk2bbv3ub"]
 
-[ext_resource type="PackedScene" uid="uid://bx0rdys8yglae" path="res://scenes/STAR_BACKGROUND/star_background.tscn" id="1_lva53"]
-[ext_resource type="PackedScene" uid="uid://rhf4jh1bvjev" path="res://scenes/HEART_PARTICLE/heart_burst_effect.tscn" id="2_lk86r"]
+[ext_resource type="Script" uid="uid://crrfp2t4f21e2" path="res://app_root.gd" id="1_cduko"]
 
 [node name="APP_ROOT" type="Node2D"]
+script = ExtResource("1_cduko")
 
-[node name="MAIN_MENU" type="Node2D" parent="."]
-
-[node name="GAMEPLAY" type="Node2D" parent="."]
-
-[node name="OPTIONS" type="Node2D" parent="."]
-
-[node name="STAR_BACKGROUND" parent="." instance=ExtResource("1_lva53")]
-
-[node name="HEART_BURST_EFFECT" parent="." instance=ExtResource("2_lk86r")]
+[node name="LBL_prev_score" type="Label" parent="."]
+z_index = 50
+offset_top = 544.0
+offset_right = 1016.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(0, 0.87943, 0.845415, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+text = "placeholder"
+horizontal_alignment = 1
