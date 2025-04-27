@@ -1,0 +1,107 @@
+[gd_scene load_steps=24 format=3 uid="uid://bsefrg2i5emfs"]
+
+[ext_resource type="Script" uid="uid://c5jpu3caf8bhb" path="res://scenes/coin/coin.gd" id="1_vtlh3"]
+[ext_resource type="Texture2D" uid="uid://d3xxvtv1nr271" path="res://scenes/coin/coin_sprite_00001.png" id="2_mnflt"]
+[ext_resource type="Texture2D" uid="uid://bgsvy5wmrm6pb" path="res://scenes/coin/coin_sprite_00002.png" id="3_gtp6k"]
+[ext_resource type="Texture2D" uid="uid://broeaew1sxnuj" path="res://scenes/coin/coin_sprite_00003.png" id="4_bh6b7"]
+[ext_resource type="Texture2D" uid="uid://b31iv7p6qyd14" path="res://scenes/coin/coin_sprite_00004.png" id="5_db665"]
+[ext_resource type="Texture2D" uid="uid://bajy5ts7wk1on" path="res://scenes/coin/coin_sprite_00005.png" id="6_5r316"]
+[ext_resource type="Texture2D" uid="uid://cj56i63tnokry" path="res://scenes/coin/coin_sprite_00006.png" id="7_d5q0d"]
+[ext_resource type="Texture2D" uid="uid://6gdmrtnw5pd2" path="res://scenes/coin/coin_sprite_00007.png" id="8_t6p3m"]
+[ext_resource type="Texture2D" uid="uid://cwnkdxlb5bydp" path="res://scenes/coin/coin_sprite_00008.png" id="9_q2qh1"]
+[ext_resource type="Texture2D" uid="uid://bwex4f6jgtvc" path="res://scenes/coin/coin_sprite_00009.png" id="10_fhc6j"]
+[ext_resource type="Texture2D" uid="uid://c130g6bqtwrby" path="res://scenes/coin/coin_sprite_00010.png" id="11_qbdyo"]
+[ext_resource type="Texture2D" uid="uid://x062rvrsw1nh" path="res://scenes/coin/coin_sprite_00011.png" id="12_l7mf6"]
+[ext_resource type="Texture2D" uid="uid://uirbr55rd62x" path="res://scenes/coin/coin_sprite_00012.png" id="13_miku8"]
+[ext_resource type="Texture2D" uid="uid://dfmp8ad071d5" path="res://scenes/coin/coin_sprite_00013.png" id="14_n0gcu"]
+[ext_resource type="Texture2D" uid="uid://1jn2x5cvfwl1" path="res://scenes/coin/coin_sprite_00014.png" id="15_ua01q"]
+[ext_resource type="Texture2D" uid="uid://cmtm62x175m8i" path="res://scenes/coin/coin_sprite_00015.png" id="16_orn46"]
+[ext_resource type="Texture2D" uid="uid://b4x0softn8hrh" path="res://scenes/coin/coin_sprite_00016.png" id="17_uoxem"]
+[ext_resource type="Texture2D" uid="uid://dwcmpx4ftorea" path="res://scenes/coin/coin_sprite_00017.png" id="18_cnj5c"]
+[ext_resource type="Texture2D" uid="uid://bm46cf6poyhpv" path="res://scenes/coin/coin_sprite_00018.png" id="19_mnycj"]
+[ext_resource type="Texture2D" uid="uid://bu0igvdpxssm0" path="res://scenes/coin/coin_sprite_00019.png" id="20_pntxn"]
+[ext_resource type="Texture2D" uid="uid://sblujf0axj3i" path="res://scenes/coin/coin_sprite_00020.png" id="21_aaoau"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkrgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mnflt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gtp6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bh6b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_db665")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5r316")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d5q0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t6p3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q2qh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qbdyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l7mf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_miku8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n0gcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ua01q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_orn46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uoxem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cnj5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mnycj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pntxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_aaoau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7ns5"]
+radius = 56.0
+
+[node name="COIN" type="Area2D"]
+script = ExtResource("1_vtlh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tkrgg")
+frame = 6
+frame_progress = 0.90819
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s7ns5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

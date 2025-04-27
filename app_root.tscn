@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcxlyk2bbv3ub"]
+[gd_scene load_steps=3 format=3 uid="uid://bcxlyk2bbv3ub"]
 
 [ext_resource type="PackedScene" uid="uid://bx0rdys8yglae" path="res://scenes/STAR_BACKGROUND/star_background.tscn" id="1_lva53"]
+[ext_resource type="PackedScene" uid="uid://rhf4jh1bvjev" path="res://scenes/HEART_PARTICLE/heart_burst_effect.tscn" id="2_lk86r"]
 
 [node name="APP_ROOT" type="Node2D"]
 
@@ -11,3 +12,5 @@
 [node name="OPTIONS" type="Node2D" parent="."]
 
 [node name="STAR_BACKGROUND" parent="." instance=ExtResource("1_lva53")]
+
+[node name="HEART_BURST_EFFECT" parent="." instance=ExtResource("2_lk86r")]

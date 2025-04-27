@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://rhf4jh1bvjev"]
+
+[ext_resource type="Texture2D" uid="uid://m40e64prbv7w" path="res://scenes/HEART_PARTICLE/heart.png" id="1_h6ph4"]
+[ext_resource type="Material" uid="uid://ukyu62og2yoq" path="res://scenes/STAR_BACKGROUND/MATL_additive.tres" id="1_sinkm"]
+
+[sub_resource type="Curve" id="Curve_gf6rm"]
+_data = [Vector2(0, 1), 0.0, -0.115551, 0, 0, Vector2(1, 0.258065), -1.78268, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_gf6rm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="Curve" id="Curve_sinkm"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="HEART_BURST_EFFECT" type="CPUParticles2D"]
+texture_filter = 2
+material = ExtResource("1_sinkm")
+emitting = false
+amount = 32
+texture = ExtResource("1_h6ph4")
+lifetime = 3.03
+one_shot = true
+speed_scale = 2.29
+explosiveness = 1.0
+randomness = 0.39
+lifetime_randomness = 0.02
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.4
+linear_accel_min = -15.0
+linear_accel_max = -5.0
+damping_min = 4.04
+damping_max = 4.04
+scale_amount_curve = SubResource("Curve_gf6rm")
+color_ramp = SubResource("Gradient_gf6rm")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_sinkm")
